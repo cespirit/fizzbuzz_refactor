@@ -54,14 +54,3 @@ function fizzBuzz(num) {
 		$("#results").append("<p>" + printStr + "</p>");
 	}
 }
-
-/*
-Test inputs
-""
-" "  
-23.8  
--4		
--5.3  
-"Not a number"
-"43 Not a number"
-*/
