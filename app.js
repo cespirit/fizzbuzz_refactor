@@ -1,18 +1,13 @@
 $(document).ready(function(){
-	$("button").click(runFizzBuzz);	
-	$("#number").keyup(function(e){
-		if(e.keyCode === 13) {
-			runFizzBuzz();
-		}
-	});
+	$("#number-form").submit(runFizzBuzz);
 });
 
-function runFizzBuzz(){
-	$("#results").empty();
-	
+function runFizzBuzz(event){
+	event.preventDefault();
 	var num = $("#number").val();	
 	
 	if(isValidNumber(num)) {
+		clearResults();
 		fizzBuzz(num);
 	}
 	else {
@@ -38,7 +33,7 @@ function isValidNumber(num) {
 
 function fizzBuzz(num) {
 	var printStr;
-	$("#results").append("<h3>Fizz buzz up to " + num + "</h3>");
+	$("#results-title").html( formatHTMLString("Fizz buzz up to " + num , "h3") );
 	
 	for(var i = 1; i <= num; i++) {
 		printStr = "";
@@ -51,6 +46,16 @@ function fizzBuzz(num) {
 		if(!printStr) {
 			printStr = i;
 		}
-		$("#results").append("<p>" + printStr + "</p>");
+		$("#results").append( formatHTMLString(printStr, "p") );
 	}
+}
+
+function clearResults() {
+	$("#results-title").html("");
+	$("#results").empty();	
+}
+
+function formatHTMLString(string, element) {
+	var html = "<" + element + ">" + string + "</" + element + ">"
+	return html;
 }

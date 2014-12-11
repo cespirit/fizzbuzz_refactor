@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>FizzBuzz</title>
+    <title>Fizz Buzz</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css">
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>    
@@ -20,9 +20,12 @@
 		     </p>
 		    
 		    <h3>Let's Play!</h3>
-		    <p>Enter a non-decimal number greater than zero.</p>    
-		    <input id="number" type="number" placeholder="Type in a number" min="1"><button>Go!</button>
+		    <p>Enter a non-decimal number greater than zero.</p> 
+		    <form id="number-form">   
+		    	<input id="number" type="number" placeholder="Type in a number" min="1"><button id="run-button">Go!</button>
+		    </form>
 		    
+		    <h3 id="results-title"></h3>
 		    <div id="results"></div>	
 	    </div>	    
 </body>
